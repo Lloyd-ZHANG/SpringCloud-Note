@@ -10,12 +10,14 @@
   <packaging>pom</packaging>
   <modules>
     <module>cloud-provider-payment8001</module>
+    <module>cloud-consumer-order80</module>
+    <module>cloud-api-commons</module>
   </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>15</maven.compiler.source>
-    <maven.compiler.target>15</maven.compiler.target>
+    <maven.compiler.source>12</maven.compiler.source>
+    <maven.compiler.target>12</maven.compiler.target>
   </properties>
 
   <dependencyManagement>
@@ -37,6 +39,7 @@
         <scope>runtime</scope>
       </dependency>
       <!-- springcloud cloud alibaba -->
+
       <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
