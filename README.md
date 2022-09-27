@@ -4,9 +4,9 @@
 
 ## 微服务架构所需组件类型
 
-### 服务注册中心
+### [服务注册中心](https://github.com/AsakiAmane/SpringCloud-Note/tree/main/Notes/Service-Registry)
 
-1. Eureka 停更
+1. [Eureka](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Registry/Eureka-Note.md) 停更
 2. Zookeeper 可用
 3. Consul 保守
 4. Nacos

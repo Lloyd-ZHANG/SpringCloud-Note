@@ -2,7 +2,7 @@
 
 ## 组件
 
-1. Eureka
+1. [Eureka](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Registry/Eureka-Note.md)
 2. Consul
 3. Zookeeper
 
