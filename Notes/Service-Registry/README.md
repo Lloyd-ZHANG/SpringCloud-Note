@@ -3,7 +3,7 @@
 ## 组件
 
 1. [Eureka](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Registry/Eureka-Note.md)
-2. Consul
+2. [Consul](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Registry/Consul-Note.md)
 3. [Zookeeper](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Registry/Zookeeper-Note.md)
 
 ## 服务治理
