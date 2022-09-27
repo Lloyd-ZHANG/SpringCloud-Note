@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  consul:
+  image: consul:latest
+  container_name: consul
+  ports:
+    - "8500:8500"
+  command: agent -server -bootstrap -ui -bind 127.0.0.1 -client 0.0.0.0
+  networks:
+    - cloud
