@@ -7,7 +7,7 @@
 ### [服务注册中心](https://github.com/AsakiAmane/SpringCloud-Note/tree/main/Notes/Service-Registry)
 
 1. [Eureka](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Registry/Eureka-Note.md) 停更
-2. Zookeeper 可用
+2. [Zookeeper](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Registry/Zookeeper-Note.md) 可用但用得不多
 3. Consul 保守
 4. Nacos
 
