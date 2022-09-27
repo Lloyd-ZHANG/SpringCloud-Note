@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>demo</artifactId>
+        <groupId>org.puuaru</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloud-provider-payment8004</artifactId>
+
+    <properties>
+        <maven.compiler.source>12</maven.compiler.source>
+        <maven.compiler.target>12</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!-- Zookeeper Client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
+            <version>3.0.2</version>
+            <!-- 由于3.0.2的curator是5.x版本，因此不再支持3.4.11的Zookeeper，考虑选择更早期的依赖版本，或是把zookeeper换成3.6版本 -->
+            <!-- 如果你想在 Zookeeper 3.4.x 中使用Curator ，可以选择 4.2.x 版本的 curator -->
+            <!-- 故可兼容的版本大概为2.2.5.RELEASE -->
+            <!-- 然而2.2.5.RELEASE又会出现SpringCloud和SpringBoot版本不一致的情况，因此基本可以确定唯一解是3.6 -->
+            <!-- <exclusions> -->
+            <!--     &lt;!&ndash; 3.0.2的依赖中会自带有3.6.0的Zookeeper，而docker-compose中选用的版本为3.4.11 &ndash;&gt; -->
+            <!--     &lt;!&ndash; 故需要先排除3.6.0的Zookeeper &ndash;&gt; -->
+            <!--     <exclusion> -->
+            <!--         <groupId>org.apache.zookeeper</groupId> -->
+            <!--         <artifactId>zookeeper</artifactId> -->
+            <!--     </exclusion> -->
+            <!-- </exclusions> -->
+        </dependency>
+
+        <!-- &lt;!&ndash; 然后引入3.4.11的Zookeeper，以解决版本冲突 &ndash;&gt; -->
+        <!-- <dependency> -->
+        <!--     <groupId>org.apache.zookeeper</groupId> -->
+        <!--     <artifactId>zookeeper</artifactId> -->
+        <!--     <version>3.4.11</version> -->
+        <!--     <exclusions> -->
+        <!--         <exclusion> -->
+        <!--             &lt;!&ndash; LoggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback or the competing implementation (class org.slf4j.impl.Log4jLoggerFactory loaded from file:/C:/Users/lloyd/.m2/repository/org/slf4j/slf4j-log4j12/1.7.30/slf4j-log4j12-1.7.30.jar). If you are using WebLogic you will need to add 'org.slf4j' to prefer-application-packages in WEB-INF/weblogic.xml: org.slf4j.impl.Log4jLoggerFactory &ndash;&gt; -->
+        <!--             <groupId>org.slf4j</groupId> -->
+        <!--             <artifactId>slf4j-log4j12</artifactId> -->
+        <!--         </exclusion> -->
+        <!--     </exclusions> -->
+        <!-- </dependency> -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.puuaru</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
