@@ -6,7 +6,7 @@
 
 ### 服务注册中心
 
-1. Euraka 停更
+1. Eureka 停更
 2. Zookeeper 可用
 3. Consul 保守
 4. Nacos
