@@ -1,6 +1,7 @@
 package com.puuaru.demo.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -11,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
  * @Date: 2022/9/26
  */
 @Configuration
+@LoadBalancerClient(name = "CLOUD-PAYMENT-SERVICE", configuration = CustomLoadBalancerConfiguration.class)
 public class ApplicationContextConfig {
     @Bean
     @LoadBalanced   // 赋予负载均衡能力
