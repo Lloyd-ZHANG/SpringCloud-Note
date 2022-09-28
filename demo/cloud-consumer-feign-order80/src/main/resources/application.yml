@@ -1,0 +1,30 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-order-service
+
+eureka:
+  client:
+    # 是否注册进EurekaServer，默认为true
+    register-with-eureka: true
+    # 是否从EurekaServer抓取已有的注册信息，默认为true，单点无所谓，集群必须设置为true才能配合ribbon使用负载均衡
+    fetch-registry: true
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001:7001/eureka, http://eureka7002:7002/eureka # 集群版配置
+
+# 开启feign的日志监控
+feign:
+  client:
+    config:
+      default.loggerLevel: FULL
+# feign整合了Ribbon，可使用Ribbon设置服务超时时间
+ribbon:
+  ReadTimeout: 5000 # 建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ConnectTimeout: 5000  # 建立连接后从服务器读取到可用资源所需的时间
+# 开启针对接口的日志监控
+logging:
+  level:
+    com.puuaru.demo.service.*: debug

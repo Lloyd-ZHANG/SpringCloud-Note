@@ -19,6 +19,7 @@
     <module>cloud-consumer-orderzk80</module>
     <module>cloud-provicerconsule-payment8006</module>
     <module>cloud-consumer-orderConsul80</module>
+      <module>cloud-consumer-feign-order80</module>
   </modules>
 
   <properties>
