@@ -2,10 +2,10 @@
 
 ## 组件
 
-* Ribbon
-* LoadBalancer
-* OpenFeign
-* Feign (寄了)
+1. [Ribbon](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Calling/Ribbon.md) 半生不熟，也停更
+2. [LoadBalancer](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Calling/LoadBalancer.md) 正在尝试取代Ribbon
+3. Feign 寄
+4. [OpenFeign](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Calling/OpenFeign.md)
 
 目前SpringCloud已默认使用LoadBalancer
 

@@ -11,12 +11,12 @@
 3. [Consul](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Registry/Consul-Note.md) 保守
 4. Nacos
 
-### 服务调用
+### [服务调用](https://github.com/AsakiAmane/SpringCloud-Note/tree/main/Notes/Service-Calling)
 
-1. Ribbon 半生不熟，也停更
-2. LoadBalancer 正在尝试取代Ribbon
+1. [Ribbon](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Calling/Ribbon.md) 半生不熟，也停更
+2. [LoadBalancer](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Calling/LoadBalancer.md) 正在尝试取代Ribbon
 3. Feign 寄
-4. OpenFeign
+4. [OpenFeign](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Calling/OpenFeign.md)
 
 ### 服务降级、服务熔断、服务限流
 
