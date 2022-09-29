@@ -18,9 +18,9 @@
 3. Feign 寄
 4. [OpenFeign](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Calling/OpenFeign.md)
 
-### 服务降级、服务熔断、服务限流
+### [服务降级、服务熔断、服务限流](https://github.com/AsakiAmane/SpringCloud-Note/tree/main/Notes/Service-Submission)
 
-1. Hystrix 停更
+1. [Hystrix](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Submission/Hystrix.md) 停更
 2. Resilience for java 国内较少使用
 3. Sentinel ※
 

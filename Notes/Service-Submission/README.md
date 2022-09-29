@@ -2,7 +2,7 @@
 
 ## 组件
 
-* Hystrix断路器
+* [Hystrix断路器](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Submission/Hystrix.md)
 * Sentinel
 
 ## 服务降级
