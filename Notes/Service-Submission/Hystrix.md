@@ -53,7 +53,11 @@ Hystrix是一个用于处理分布式系统的延迟和容错的开源库，在�
 
 ## 服务熔断
 
+Hystrix的断路器有三种状态：OPEN、HALF_OPEN、CLOSE
+
 ### 服务端配置
+
+类比保险丝，达到最大服务访问后直接拒绝访问，拉闸限电。服务熔断后，再有请求调用时将不会调用主逻辑，而是直接调用降级Fallback。通过断路器，实现了自动发现错误并将降级逻辑切换为主逻辑，减少响应延迟的效果
 
 ```java
 @HystrixCommand(fallbackMethod = "paymentCircuitBreakerFallback", commandProperties = {
@@ -64,10 +68,38 @@ Hystrix是一个用于处理分布式系统的延迟和容错的开源库，在�
 })
 ```
 
-`circuitBreaker.sleepWindowInMilliseconds` 熔断多少秒后开始尝试恢复，默认5000
+`circuitBreaker.sleepWindowInMilliseconds` 熔断多少秒后开始尝试恢复（HALF_OPEN），默认5000
 
 `circuitBreaker.requestVolumeThreshold` 滑动窗口大小，即触发熔断的最小请求数量，默认为20；举个例子，一共只有19个请求落在窗口内，全部失败了，也不会触发熔断
 
 `circuitBreaker.errorThresholdPercentage` 失败率打到多少百分比后熔断
 
-服务熔断后，再有请求调用时将不会调用主逻辑，而是直接调用降级Fallback。通多断路器，实现了自动发现错误并将降级逻辑切换为主逻辑，减少响应延迟的效果
+## 服务监控
+
+除了隔离依赖服务的调用以外，Hystrix还提供了准实时的调用监控（Hystrix Dashboard），Hystrix会持续记录所有通过Hystrix发起的请求执行信息，并以统计报表和图形的形式展示给用户，包括每秒执行多少请求成功，多少失败等。Netflix通过hystrix-metrics-event-stream项目实现了对以上指标的监控，SpringCloud也提供了Hystrix Dashboard的整合，对监控内容转化成可视化界面
+
+### 步骤
+
+1. 依赖 `spring-cloud-starter-netflix-hystrix-dashboard`
+2. 主启动类上添加启动注解 `@EnableHystrixDashboard`
+3. 在需要被监控的模块yml配置文件中加入
+
+*！需要注意的是新版本的SpringCloud需要额外在Dashboard模块中引入依赖`spring-cloud-starter-config`*
+
+```yml
+management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+```
+
+1. 在监控模块yml配置文件中加入
+
+```yml
+hystrix:
+    dashboard:
+        proxy-stream-allow-list: "*"
+```
+
+5. 在监控仪表盘页面（监控模块/hystrix）输入监控地址（监控模块/actuator/hystrix.stream）即可
