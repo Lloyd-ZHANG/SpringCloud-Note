@@ -13,7 +13,7 @@ spring:
   application:
     name: cloud-config-center
   profiles:
-    active: native  # 表示从本地取配置文件
+    active: native  # 表示从本地取配置文件，本体配置文件的情况下无法实现动态刷新
   cloud:
     config:
       server:
