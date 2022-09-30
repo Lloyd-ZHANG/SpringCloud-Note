@@ -1,0 +1,2 @@
+config:
+  info-default: "master branch,springcloud-config/application.yml version=7"

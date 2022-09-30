@@ -1,0 +1,2 @@
+config:
+  info-config-default: "springcloud/config.yml"

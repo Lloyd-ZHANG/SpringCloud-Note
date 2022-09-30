@@ -1,0 +1,29 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  profiles:
+    active: native  # 表示从本地取配置文件
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+#        git:
+#          uri: git@github.com:AsakiAmane/springcloud-config.git
+#          # 搜索目录
+#          search-paths:
+#            - /
+#          force-pull: true
+      # 分支
+#      label: main
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: config
