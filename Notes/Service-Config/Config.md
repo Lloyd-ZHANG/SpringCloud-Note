@@ -33,7 +33,7 @@ spring:
 
 配置中心的返回规则如下：
 
-假设访问URI为：`http://[SERVER]/[name]-[profile].yml`，则会返回以下配置文件：`[name].yml`（代表name这个应用的通用配置）、`[name]-[profile].yml`（代表name应用在profile环境下的配置）、`application.yml`（代表整个应用的通用配置）以及 `application-[profile].yml`（代表整个应用在profile环境下的通用配置。
+假设访问URI为：`http://[SERVER]/[name]-[profile].yml`，则会返回以下配置文件：`[name].yml`（代表name这个应用的通用配置）、`[name]-[profile].yml`（代表name应用在profile环境下的配置）、`application.yml`（代表整个应用的通用配置）以及 `application-[profile].yml`（代表整个应用在profile环境下的通用配置。若上述文件中的属性有重复，则会按照上述顺序层层覆盖
 
 需要注意的是，若仅声明访问 `http://[SERVER]/[name].yml` 会返回404
 
