@@ -16,3 +16,9 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:7001/eureka
+# 暴露端口从而实现动态加载
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -39,6 +39,8 @@ spring:
 
 ### 客户端配置
 
+**加入spring-cloud-starter-bootstrap依赖**
+
 1. 为了防止本地配置被覆盖，需要将配置文件改为 `bootstrap.yml`
 2. 在 `bootstrap.yml` 中进行配置：
 
