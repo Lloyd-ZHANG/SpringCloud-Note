@@ -39,7 +39,7 @@ public class PaymentController {
         return new CommonResult<>(444, "Insert failed");
     }
 
-    @GetMapping("/payment/{id}")
+    @GetMapping("/payment/get/{id}")
     public CommonResult<Payment> getById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getById(id);
         log.info("Get into getPayment success");
@@ -57,5 +57,10 @@ public class PaymentController {
         List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
         instances.forEach(serviceInstance -> log.info(serviceInstance.getInstanceId() + "\t" + serviceInstance.getHost() + "\t" + serviceInstance.getPort() + "\t" + serviceInstance.getUri()));
         return this.discoveryClient;
+    }
+
+    @GetMapping("/payment/lb")
+    public String getPaymentLB() {
+        return serverPort;
     }
 }

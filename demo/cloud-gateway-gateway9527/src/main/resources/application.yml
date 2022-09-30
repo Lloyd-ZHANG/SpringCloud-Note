@@ -1,0 +1,30 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      # 在开启discovery.locator的情况下
+      discovery:
+        locator:
+          enabled: true  # 启用动态路由
+      routes:
+      # 可以用lb（LoadBalance）来通过服务集群别名访问服务
+        - id: payment_get
+          uri: lb://CLOUD-PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/get/**
+        - id: payment_lb
+          uri: lb://CLOUD-PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/lb/**
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: cloud-gateway9527
+    prefer-ip-address: true
