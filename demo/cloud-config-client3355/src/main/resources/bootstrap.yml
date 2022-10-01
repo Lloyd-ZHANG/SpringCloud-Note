@@ -4,12 +4,13 @@ spring:
   application:
     name: config
   profiles:
-    active: prod
+    active: dev
   cloud:
     config:
       uri: http://localhost:3344  # 配置中心地址
       name: application  # 配置文件名（前缀）
       profile: dev  # 配置文件后缀，用以区分环境
+      label: main
 eureka:
   client:
     register-with-eureka: true

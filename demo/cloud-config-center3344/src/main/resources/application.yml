@@ -3,21 +3,22 @@ server:
 spring:
   application:
     name: cloud-config-center
-  profiles:
-    active: native  # 表示从本地取配置文件
+#  profiles:
+#    active: native  # 表示从本地取配置文件
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/config
-#        git:
-#          uri: git@github.com:AsakiAmane/springcloud-config.git
-#          # 搜索目录
-#          search-paths:
-#            - /
-#          force-pull: true
-      # 分支
-#      label: main
+#        native:
+#          search-locations: classpath:/config
+        git:
+          uri: https://github.com/AsakiAmane/springcloud-config.git
+          # 搜索目录
+          search-paths:
+            - springcloud-config
+          force-pull: true
+#          default-label: main
+      #       分支
+      label: main
 eureka:
   client:
     register-with-eureka: true
