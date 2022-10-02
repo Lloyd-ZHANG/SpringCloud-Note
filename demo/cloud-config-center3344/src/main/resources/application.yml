@@ -17,8 +17,13 @@ spring:
             - springcloud-config
           force-pull: true
 #          default-label: main
-      #       分支
+#             分支
       label: main
+  rabbitmq:
+    username: puuaru
+    password: password
+    host: localhost
+    port: 5672
 eureka:
   client:
     register-with-eureka: true
@@ -28,3 +33,9 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: config
+management:
+  endpoints:
+    web:
+      exposure:
+        # bus-refresh端口来自spring cloud bus，在最新的Spring Cloud Bus文档中写为"busrefresh"
+        include: "busrefresh"

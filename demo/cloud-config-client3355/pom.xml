@@ -17,12 +17,18 @@
     </properties>
 
     <dependencies>
+        <!-- bus-RabbitMQ -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+        <!-- 新版本之后的SpringCloud要想通过bootstrap.yml来代替application.yml避免出现混淆，则需要引入此依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
             <version>3.0.2</version>
         </dependency>
-
         <!--config-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
