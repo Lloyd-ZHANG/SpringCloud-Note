@@ -13,3 +13,11 @@ Spring Cloud Stream是一个构建消息驱动微服务的框架。
 在没有binder概念时，SpringBoot应用需要直接与消息中间件进行消息交互，此时由于各消息中间件的构建初衷有所不同，他们的实现细节上也会有较大差异
 
 Spring Cloud Stream通过定义Binder作为中间层，完美地实现了应用程序与消息中间件细节之间的隔离，使得应用程序不再需要考虑各种不同消息中间件的实现。
+
+![SpringCloudStream](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Message-Bus/img/SpringCloudStream.png)
+
+binder的出现也让应用程序对接至不同消息中间件的难度大大减少：
+
+![UsingDifferentMiddleware](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Message-Bus/img/UsingDifferentMiddleware.png)
+
+binder中，output对应生产者，input对应消费者，消息通信的方式遵循发布订阅模式，可以通过设定组（group）的方式指定消息的流向
