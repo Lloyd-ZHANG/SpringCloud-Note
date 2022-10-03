@@ -1,0 +1,31 @@
+server:
+  port: 8802
+spring:
+  application:
+    name: cloud-stream-consumer
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:  # 配置要绑定的rabbitmq的服务信息，这里是服务名，可以是defaultRabbit，也可以是Rabbit1或者Rabbit2
+          type: rabbit  # 消息组件类型
+          environment:  # 设置rabbitmq的相关环境配置，内容与application.yml中的spring.rabbitmq一致
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: puuaru
+                password: password
+      bindings:
+        input: # 声明binding名
+          destination: studyExchange # 声明要使用的Exchange名
+          content-type: application/json # 消息类型，文本为text/plain
+          binder: defaultRabbit # 指定要绑定的消息服务
+          group: groupA
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: receive-8802.com
