@@ -103,7 +103,10 @@ spring:
                   username: puuaru
                   password: password
         bindings:
-          streamTest-out-0: # 声明binding名，与方法一最大的区别，这里的方法名有如下格式要求，streamTest为自定义的绑定名称，out代表生产者，0是该binding的index，多数情况下生产者/消费者一次只会产生/消费一条消息，因此index多使用0，若生产者一次生产多条信息，或是消费者一次需要消费多条消息，则需用0以上的index
+          streamTest-out-0: # 声明binding名，与方法一最大的区别，这里的方法名有如下格式要求:
+          # streamTest为自定义的绑定名称，out代表生产者，0是该binding的index
+          # 多数情况下生产者/消费者一次只会产生/消费一条消息，因此index多使用0
+          # 若生产者一次生产多条信息，或是消费者一次需要消费多条消息，则需用0以上的index
             destination: studyExchange # 声明要使用的Exchange名
             content-type: application/json # 消息类型，文本为text/plain
             binder: defaultRabbit # 指定要绑定的消息服务
