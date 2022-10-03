@@ -11,5 +11,5 @@
 ## 组件
 
 1. Nacos
-2. Bus
-3. Stream（消息驱动）
+2. [Bus](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Message-Bus/Bus.md)
+3. [Stream](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Message-Bus/Stream.md) （消息驱动）

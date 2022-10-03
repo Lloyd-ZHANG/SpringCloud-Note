@@ -10,5 +10,5 @@
 
 ## 组件
 
-1. Gateway
+1. [Gateway](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Gateway/Gateway.md)
 2. Zuul2(内部有瓜)

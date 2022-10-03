@@ -6,5 +6,5 @@
 
 ## 组件
 
-* Config
+* [Config](https://github.com/AsakiAmane/SpringCloud-Note/blob/main/Notes/Service-Config/Config.md)
 * Nacos
